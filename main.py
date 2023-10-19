@@ -5,7 +5,7 @@
 ########
 from param import Parameter as p
 import GenerateInitialPath
-import util
+import utils
 import constraints
 import matplotlib.pyplot as plt
 import numpy as np
@@ -22,7 +22,7 @@ x, y, theta, phi = GenerateInitialPath.gengerate_initialpath(cubicX, cubicY)
 
 trajectory_matrix = np.array([x, y, theta, phi])
 
-trajectory_vector = util.matrix_to_vector(trajectory_matrix)
+trajectory_vector = utils.matrix_to_vector(trajectory_matrix)
 '''
 function = util.evaluate_function(trajectory_vector)
 const = util.generate_constraints()

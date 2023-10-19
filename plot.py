@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from param import Parameter as p
-import util
+import utils
 import numpy as np
 import GenerateInitialPath
 
@@ -47,7 +47,7 @@ def vis_path(trajectory_vector):
     fig, ax = plt.subplots()
     
     #vectorをmatrixに変換
-    trajectory_matrix = util.vector_to_matrix(trajectory_vector)
+    trajectory_matrix = utils.vector_to_matrix(trajectory_vector)
     x, y = trajectory_matrix[0], trajectory_matrix[1]
     
     ax.scatter(x, y, marker='x', color='red', s=5)
@@ -88,11 +88,11 @@ def compare_path(trajectory_vector1, trajectory_vector2):
     fig, ax = plt.subplots()
     
     #2本のpathを配置
-    trajectory_matrix1 = util.vector_to_matrix(trajectory_vector1)
+    trajectory_matrix1 = utils.vector_to_matrix(trajectory_vector1)
     x1, y1 = trajectory_matrix1[0], trajectory_matrix1[1]
     ax.scatter(x1, y1, marker='x', color='red', s=5, label='Initial path')
     
-    trajectory_matrix2 = util.vector_to_matrix(trajectory_vector2)
+    trajectory_matrix2 = utils.vector_to_matrix(trajectory_vector2)
     x2, y2 = trajectory_matrix2[0], trajectory_matrix2[1]
     ax.scatter(x2, y2, marker='x', color='blue', s=5, label='Optimized path')
     
@@ -131,7 +131,7 @@ def compare_path(trajectory_vector1, trajectory_vector2):
 def vis_history_theta(trajectory_vector, range_flag = False):
     fig, ax = plt.subplots()
     
-    trajectory_matrix = util.vector_to_matrix(trajectory_vector)
+    trajectory_matrix = utils.vector_to_matrix(trajectory_vector)
     
     theta = trajectory_matrix[2]
     
@@ -158,7 +158,7 @@ def vis_history_theta(trajectory_vector, range_flag = False):
 def vis_history_phi(trajectory_vector, range_flag = False):
     fig, ax = plt.subplots()
     
-    trajectory_matrix = util.vector_to_matrix(trajectory_vector)
+    trajectory_matrix = utils.vector_to_matrix(trajectory_vector)
     
     phi = trajectory_matrix[3]
     
